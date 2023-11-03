@@ -1,23 +1,12 @@
 import { GLOB_VUE } from '@antfu/eslint-config'
 import type { ConfigItem, OptionsOverrides } from '@antfu/eslint-config'
-import { isPackageExists } from 'local-pkg'
 
 export function uni(options: OptionsOverrides = {}): ConfigItem[] {
   const {
     overrides = {},
   } = options
 
-  const ignoreManifestJSON = isPackageExists('@uni-helper/vite-plugin-uni-manifest')
-  const ignorePagesJSON = isPackageExists('@uni-helper/vite-plugin-uni-pages')
-
   return [
-    {
-      name: 'uni:json:ignores',
-      ignores: [
-        ignoreManifestJSON && '**/manifest.json',
-        ignorePagesJSON && '**/pages.json',
-      ].filter(Boolean) as string[],
-    },
     {
       files: [GLOB_VUE],
       name: 'uni:vue:rules',
@@ -25,7 +14,7 @@ export function uni(options: OptionsOverrides = {}): ConfigItem[] {
         'vue/component-name-in-template-casing': ['error', 'PascalCase', {
           registeredComponentsOnly: false,
           ignores: [
-          // 视图
+            // 视图
             'view',
             'scroll-view',
             'swiper',
