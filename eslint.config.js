@@ -1,3 +1,9 @@
-import uni from './dist/index'
+import antfu from '@antfu/eslint-config'
 
-export default uni()
+export default antfu({
+  typescript: true,
+  ignores: [
+    'fixtures',
+    '_fixtures',
+  ],
+})

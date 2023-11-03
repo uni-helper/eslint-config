@@ -1,7 +1,7 @@
 import type { OptionsConfig as AntfuOptionsConfig, ConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
-import { uni, sortManifestJson } from './config'
 import { isPackageExists } from 'local-pkg'
+import { sortManifestJson, sortPagesJson, uni } from './config'
 
 type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
   uni?: ConfigItem['rules']
@@ -22,15 +22,16 @@ export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfi
   const ignorePagesJSON = isPackageExists('@uni-helper/vite-plugin-uni-pages')
   options.ignores = options.ignores || []
 
-  if (ignoreManifestJSON) {
+  if (ignoreManifestJSON)
     options.ignores.push('**/manifest.json')
-  }
-  else{
+
+  else
     userConfigs.unshift(sortManifestJson())
-  }
-  if (ignorePagesJSON) {
+
+  if (ignorePagesJSON)
     options.ignores.push('**/pages.json')
-  }
+  else
+    userConfigs.unshift(sortPagesJson())
 
   if (enableUni) {
     userConfigs.unshift(uni({
