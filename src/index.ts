@@ -1,6 +1,6 @@
 import type { OptionsConfig as AntfuOptionsConfig, ConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
-import { uni } from './config'
+import { uni, sortManifestJson } from './config'
 import { isPackageExists } from 'local-pkg'
 
 type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
@@ -24,6 +24,9 @@ export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfi
 
   if (ignoreManifestJSON) {
     options.ignores.push('**/manifest.json')
+  }
+  else{
+    userConfigs.unshift(sortManifestJson())
   }
   if (ignorePagesJSON) {
     options.ignores.push('**/pages.json')
