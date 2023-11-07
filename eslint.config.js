@@ -1,7 +1,11 @@
-import antfu from '@antfu/eslint-config'
+import jiti from 'jiti'
 
-export default antfu({
-  typescript: true,
+const uni = jiti(null, {
+  esmResolve: true,
+  interopDefault: true,
+})('./src/index.ts')
+
+export default uni({
   ignores: [
     'fixtures',
     '_fixtures',

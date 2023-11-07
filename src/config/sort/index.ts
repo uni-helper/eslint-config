@@ -8,7 +8,7 @@ export function sortManifestJson(): ConfigItem[] {
       files: ['**/manifest.json'],
       name: 'uni-helper:sort-manifest-json',
       rules: manifestRules,
-    }
+    },
   ]
 }
 
@@ -18,6 +18,6 @@ export function sortPagesJson(): ConfigItem[] {
       files: ['**/pages.json'],
       name: 'uni-helper:sort-pages-json',
       rules: pagesRules,
-    }
+    },
   ]
 }
