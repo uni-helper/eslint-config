@@ -1,8 +1,10 @@
 import { join, resolve } from 'node:path'
-import { afterAll, beforeAll, it } from 'vitest'
-import fs from 'fs-extra'
+import type { ConfigItem } from '@antfu/eslint-config'
 import { execa } from 'execa'
 import fg from 'fast-glob'
+import fs from 'fs-extra'
+import { afterAll, beforeAll, it } from 'vitest'
+import type { OptionsConfig } from './../src/index'
 
 beforeAll(async () => {
   await fs.rm('_fixtures', { recursive: true, force: true })
@@ -11,12 +13,13 @@ afterAll(async () => {
   await fs.rm('_fixtures', { recursive: true, force: true })
 })
 
-runWithConfig('manifest')
-runWithConfig('pages')
+runWithConfig('uniJson', {
+  uniJson: true,
+})
 
-function runWithConfig(name: string) {
+function runWithConfig(name: string, configs: OptionsConfig, ...items: ConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
-    const from = resolve('fixtures/input', name)
+    const from = resolve('fixtures/input')
     const output = resolve('fixtures/output', name)
     const target = resolve('_fixtures', name)
 
@@ -29,8 +32,11 @@ function runWithConfig(name: string) {
 // @eslint-disable
 import uni from '@uni-helper/eslint-config'
 
-export default uni()
-`)
+export default uni(
+  ${JSON.stringify(configs)},
+  ...${JSON.stringify(items) ?? []},
+)
+  `)
 
     await execa('npx', ['eslint', '.', '--fix'], {
       cwd: target,

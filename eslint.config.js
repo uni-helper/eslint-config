@@ -1,9 +1,4 @@
-import jiti from 'jiti'
-
-const uni = jiti(null, {
-  esmResolve: true,
-  interopDefault: true,
-})('./src/index.ts')
+import uni from '@uni-helper/eslint-config'
 
 export default uni({
   ignores: [
