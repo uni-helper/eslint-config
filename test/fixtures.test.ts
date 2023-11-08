@@ -13,9 +13,11 @@ afterAll(async () => {
   await fs.rm('_fixtures', { recursive: true, force: true })
 })
 
-runWithConfig('uniJson', {
-  uniJson: true,
+runWithConfig('json', {
+  uni: false,
 })
+
+runWithConfig('uni', {})
 
 function runWithConfig(name: string, configs: OptionsConfig, ...items: ConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
