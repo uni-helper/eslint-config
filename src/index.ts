@@ -39,6 +39,8 @@ export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfi
     userConfigs.unshift(sortThemeJson())
 
   if (enableUni) {
+    // force enable vue
+    options.vue = true
     userConfigs.unshift(uni({
       overrides: overrides.uni,
     }))
