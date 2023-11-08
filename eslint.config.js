@@ -1,3 +1,8 @@
-import uni from './dist/index'
+import uni from '@uni-helper/eslint-config'
 
-export default uni()
+export default uni({
+  ignores: [
+    'fixtures',
+    '_fixtures',
+  ],
+})

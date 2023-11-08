@@ -1,5 +1,5 @@
-import { defineBuildConfig } from 'unbuild'
 import { readFileSync, writeFileSync } from 'node:fs'
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: ['src/index'],
@@ -10,8 +10,9 @@ export default defineBuildConfig({
   },
   failOnWarn: false,
   hooks: {
-    'build:done'(ctx) {
-      if (ctx.options.stub) return
+    'build:done': function (ctx) {
+      if (ctx.options.stub)
+        return
       let file = 'dist/index.cjs'
 
       let code = readFileSync(file, 'utf8')
@@ -24,5 +25,5 @@ export default defineBuildConfig({
       writeFileSync(file, code)
       writeFileSync('dist/index.d.cts', code)
     },
-  }
+  },
 })
