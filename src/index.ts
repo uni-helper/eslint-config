@@ -1,7 +1,7 @@
 import type { OptionsConfig as AntfuOptionsConfig, ConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
-import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './config'
+import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
 type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
   uni?: ConfigItem['rules']
