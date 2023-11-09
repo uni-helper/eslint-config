@@ -1,78 +1,32 @@
-import { GLOB_VUE } from '@antfu/eslint-config'
-import type { ConfigItem, OptionsOverrides } from '@antfu/eslint-config'
+import type { ConfigItem, OptionsHasTypeScript, OptionsOverrides, OptionsStylistic } from '@antfu/eslint-config'
+import { pluginVue, vue } from '@antfu/eslint-config'
+import { GLOB_UNI } from '../globs'
 
-export function uni(options: OptionsOverrides = {}): ConfigItem[] {
+export function uni(options: OptionsHasTypeScript & OptionsOverrides & OptionsStylistic = {}): ConfigItem[] {
   const {
     overrides = {},
   } = options
+  const vueConfig = vue({ ...options })
+
+  const setup = vueConfig.find(v => v.name === 'antfu:vue:setup')!
+  const rules = vueConfig.find(v => v.name === 'antfu:vue:rules')!
+
+  setup.name = 'uni:vue:setup'
+  setup.plugins = {
+    vue: pluginVue,
+  }
+  rules.name = 'uni:vue:rules'
+  rules.files = [GLOB_UNI]
+  rules.rules = {
+    ...rules.rules,
+    'vue/component-name-in-template-casing': ['error', 'kebab-case', {
+      registeredComponentsOnly: false,
+    }],
+    ...overrides,
+  }
 
   return [
-    {
-      files: [GLOB_VUE],
-      name: 'uni:vue:rules',
-      rules: {
-        'vue/component-name-in-template-casing': ['error', 'PascalCase', {
-          registeredComponentsOnly: false,
-          ignores: [
-            // 视图
-            'view',
-            'scroll-view',
-            'swiper',
-            'match-media',
-            'movable-area',
-            'movable-view',
-            'cover-view',
-            'cover-image',
-            // 基础
-            'icon',
-            'text',
-            'rich-text',
-            'progress',
-            // 表单
-            'editor',
-            'picker',
-            'picker-view',
-            'slider',
-            // 路由
-            'navigator',
-            // 媒体
-            'animation-view',
-            'camera',
-            'image',
-            'live-player',
-            'live-pusher',
-            // 地图
-            'map',
-            // 画布
-            // webview
-            'web-view',
-            // TODO: 广告
-            'ad',
-            'ad-rewarded-video',
-            'ad-fullscreen-video',
-            'ad-interstitial',
-            'ad-draw',
-            'ad-content-page',
-            // 云数据库
-            'unicloud-db',
-            // 页面配置
-            'page-meta',
-            'navigation-bar',
-            'custom-tab-bar',
-            // nvue 组件
-            'barcode',
-            'list',
-            'cell',
-            'recycle-list',
-            'waterfall',
-            'refresh',
-            // 小程序组件
-            'official-account',
-            'open-data',
-          ],
-        }],
-        ...overrides,
-      },
-    },
+    setup,
+    rules,
   ]
 }

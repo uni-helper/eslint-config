@@ -42,7 +42,6 @@ export default uni(
 
     await execa('npx', ['eslint', '.', '--fix'], {
       cwd: target,
-      stdio: 'pipe',
     })
 
     const files = await fg('**/*', {
