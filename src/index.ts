@@ -18,16 +18,7 @@ export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfi
     uni: enableUni = true,
     uniJson = true,
     overrides = {},
-    typescript: enableTypeScript = isPackageExists('typescript'),
   } = options
-
-  const stylisticOptions = options.stylistic === false
-    ? false
-    : typeof options.stylistic === 'object'
-      ? options.stylistic
-      : {}
-  if (stylisticOptions && !('jsx' in stylisticOptions))
-    stylisticOptions.jsx = options.jsx ?? true
 
   const ignoreManifestJSON = isPackageExists('@uni-helper/vite-plugin-uni-manifest') || uniJson === false
   const ignorePagesJSON = isPackageExists('@uni-helper/vite-plugin-uni-pages') || uniJson === false
@@ -48,18 +39,14 @@ export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfi
     userConfigs.unshift(sortThemeJson())
 
   if (enableUni) {
-    // force disable vue
-    options.vue = false
+    // force enable vue
+    options.vue = true
     userConfigs.unshift(uni({
       overrides: overrides.uni,
-      typescript: !!enableTypeScript,
-      stylistic: stylisticOptions,
     }))
   }
 
-  const config = antfu(options, ...userConfigs)
-
-  return config
+  return antfu(options, ...userConfigs)
 }
 
 export default uniHelper
