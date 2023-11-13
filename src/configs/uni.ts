@@ -11,8 +11,8 @@ export function uni(options: OptionsOverrides = {}): ConfigItem[] {
       files: [GLOB_VUE],
       name: 'uni:vue:rules',
       rules: {
-        'vue/component-name-in-template-casing': ['error', 'kebab-case', {
-          registeredComponentsOnly: false,
+        'vue/component-name-in-template-casing': ['error', 'PascalCase', {
+          registeredComponentsOnly: true,
         }],
         ...overrides,
       },
