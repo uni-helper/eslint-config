@@ -1,6 +1,6 @@
 # @uni-helper/eslint-config
 
-适用于 uni-app 的 Anthony's ESLint 配置预设
+适用于 uni-app 的 [Anthony's ESLint](https://github.com/antfu/eslint-config) 配置预设
 
 ## 安装
 
@@ -12,6 +12,23 @@ pnpm i -D eslint @uni-helper/eslint-config
 
 ### 配置文件
 
+With ESM (推荐):
+
+**在 `package.json` 中设置 `"type": "module"` ：**
+
+```json
+{
+  "type": "module",
+}
+```
+
+设置以下 `eslint.config.js`
+
+```js
+import uni from '@uni-helper/eslint-config'
+
+export default uni()
+```
 
 With CJS:
 
@@ -20,15 +37,6 @@ With CJS:
 const uni = require('@uni-helper/eslint-config')
 
 module.exports = uni()
-```
-
-With ESM:
-
-```js
-// eslint.config.js
-import uni from '@uni-helper/eslint-config'
-
-export default uni()
 ```
 
 ### 在 package.json 中添加 script
