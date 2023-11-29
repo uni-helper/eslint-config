@@ -12,25 +12,9 @@ pnpm i -D eslint @uni-helper/eslint-config
 
 ### 配置文件
 
-With ESM (推荐):
+With CJS (推荐):
 
-**在 `package.json` 中设置 `"type": "module"` ：**
-
-```json
-{
-  "type": "module",
-}
-```
-
-设置以下 `eslint.config.js`
-
-```js
-import uni from '@uni-helper/eslint-config'
-
-export default uni()
-```
-
-With CJS:
+**UniApp 暂时无法直接使用 ESM 的 `eslint.config.js` **
 
 ```js
 // eslint.config.js
@@ -48,6 +32,24 @@ module.exports = uni()
     "lint:fix": "eslint . --fix"
   }
 }
+```
+
+With ESM:
+
+**在 `package.json` 中设置 `"type": "module"` ：**
+
+```json
+{
+  "type": "module",
+}
+```
+
+设置以下 `eslint.config.js`
+
+```js
+import uni from '@uni-helper/eslint-config'
+
+export default uni()
 ```
 
 ## VS Code 自动修复
