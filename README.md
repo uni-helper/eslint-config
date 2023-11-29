@@ -108,18 +108,18 @@ export default uni()
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni()
+module.exports = uni()
 ```
 
 如果你想调整 `uniHelper` 预设可以这样做：
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni({
+module.exports = uni({
   // 启用 stylistic 格式化规则
   // stylistic: true,
 
@@ -149,9 +149,9 @@ export default uni({
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni(
+module.exports = uni(
   {
     // 为 uniHelper 配置规则
   },
