@@ -1,11 +1,11 @@
-import type { ConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem } from '@antfu/eslint-config'
 import {
   appPlusOder,
   networkTimeoutOder,
   rootOder,
 } from './order'
 
-export const manifestRules: ConfigItem['rules'] = {
+export const manifestRules: FlatConfigItem['rules'] = {
   'jsonc/sort-array-values': [
     'error',
     {

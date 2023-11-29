@@ -1,6 +1,6 @@
-import type { ConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem } from '@antfu/eslint-config'
 
-export const themeRules: ConfigItem['rules'] = {
+export const themeRules: FlatConfigItem['rules'] = {
   'jsonc/sort-array-values': [
     'error',
     {
