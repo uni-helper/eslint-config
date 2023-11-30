@@ -1,9 +1,9 @@
-import type { ConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem } from '@antfu/eslint-config'
 import { manifestRules } from './manifestRules'
 import { pagesRules } from './pagesRules'
 import { themeRules } from './themeRules'
 
-export function sortManifestJson(): ConfigItem[] {
+export function sortManifestJson(): FlatConfigItem[] {
   return [
     {
       files: ['**/manifest.json'],
@@ -13,7 +13,7 @@ export function sortManifestJson(): ConfigItem[] {
   ]
 }
 
-export function sortPagesJson(): ConfigItem[] {
+export function sortPagesJson(): FlatConfigItem[] {
   return [
     {
       files: ['**/pages.json'],
@@ -23,7 +23,7 @@ export function sortPagesJson(): ConfigItem[] {
   ]
 }
 
-export function sortThemeJson(): ConfigItem[] {
+export function sortThemeJson(): FlatConfigItem[] {
   return [
     {
       files: ['**/theme.json'],

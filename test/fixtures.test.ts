@@ -1,5 +1,5 @@
 import { join, resolve } from 'node:path'
-import type { ConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem } from '@antfu/eslint-config'
 import { execa } from 'execa'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
@@ -19,7 +19,7 @@ runWithConfig('json', {
 
 runWithConfig('uni', {})
 
-function runWithConfig(name: string, configs: OptionsConfig, ...items: ConfigItem[]) {
+function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
     const from = resolve('fixtures/input')
     const output = resolve('fixtures/output', name)

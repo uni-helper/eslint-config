@@ -1,6 +1,6 @@
 # @uni-helper/eslint-config
 
-适用于 uni-app 的 Anthony's ESLint 配置预设
+适用于 uni-app 的 [Anthony's ESLint](https://github.com/antfu/eslint-config) 配置预设
 
 ## 安装
 
@@ -12,23 +12,15 @@ pnpm i -D eslint @uni-helper/eslint-config
 
 ### 配置文件
 
+With CJS (推荐):
 
-With CJS:
+**UniApp 暂时无法直接使用 ESM 的 `eslint.config.js` **
 
 ```js
 // eslint.config.js
 const uni = require('@uni-helper/eslint-config')
 
 module.exports = uni()
-```
-
-With ESM:
-
-```js
-// eslint.config.js
-import uni from '@uni-helper/eslint-config'
-
-export default uni()
 ```
 
 ### 在 package.json 中添加 script
@@ -40,6 +32,24 @@ export default uni()
     "lint:fix": "eslint . --fix"
   }
 }
+```
+
+With ESM:
+
+**在 `package.json` 中设置 `"type": "module"` ：**
+
+```json
+{
+  "type": "module",
+}
+```
+
+设置以下 `eslint.config.js`
+
+```js
+import uni from '@uni-helper/eslint-config'
+
+export default uni()
 ```
 
 ## VS Code 自动修复
@@ -98,18 +108,18 @@ export default uni()
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni()
+module.exports = uni()
 ```
 
 如果你想调整 `uniHelper` 预设可以这样做：
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni({
+module.exports = uni({
   // 启用 stylistic 格式化规则
   // stylistic: true,
 
@@ -139,9 +149,9 @@ export default uni({
 
 ```js
 // eslint.config.js
-import uni from '@uni-helper/eslint-config'
+const uni = require('@uni-helper/eslint-config')
 
-export default uni(
+module.exports = uni(
   {
     // 为 uniHelper 配置规则
   },

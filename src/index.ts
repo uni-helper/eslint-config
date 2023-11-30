@@ -1,10 +1,10 @@
-import type { OptionsConfig as AntfuOptionsConfig, ConfigItem } from '@antfu/eslint-config'
+import type { OptionsConfig as AntfuOptionsConfig, FlatConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
 import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
 type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
-  uni?: ConfigItem['rules']
+  uni?: FlatConfigItem['rules']
 }
 
 export interface OptionsConfig extends AntfuOptionsConfig {
@@ -13,7 +13,7 @@ export interface OptionsConfig extends AntfuOptionsConfig {
   overrides?: OptionsConfigOverrides
 }
 
-export function uniHelper(options: OptionsConfig & ConfigItem = {}, ...userConfigs: (ConfigItem | ConfigItem[])[]) {
+export function uniHelper(options: OptionsConfig & FlatConfigItem = {}, ...userConfigs: (FlatConfigItem | FlatConfigItem[])[]) {
   const {
     uni: enableUni = true,
     uniJson = true,

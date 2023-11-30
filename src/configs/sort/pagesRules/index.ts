@@ -1,9 +1,9 @@
-import type { ConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigItem } from '@antfu/eslint-config'
 import {
   rootOder,
 } from './order'
 
-export const pagesRules: ConfigItem['rules'] = {
+export const pagesRules: FlatConfigItem['rules'] = {
   'jsonc/sort-array-values': [
     'error',
     {
