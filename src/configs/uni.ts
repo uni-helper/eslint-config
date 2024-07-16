@@ -1,7 +1,7 @@
 import { GLOB_VUE } from '@antfu/eslint-config'
-import type { FlatConfigItem, OptionsOverrides } from '@antfu/eslint-config'
+import type { OptionsOverrides, TypedFlatConfigItem } from '@antfu/eslint-config'
 
-export function uni(options: OptionsOverrides = {}): FlatConfigItem[] {
+export function uni(options: OptionsOverrides = {}): TypedFlatConfigItem[] {
   const {
     overrides = {},
   } = options

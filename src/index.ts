@@ -1,27 +1,34 @@
-import type { OptionsConfig as AntfuOptionsConfig, FlatConfigItem } from '@antfu/eslint-config'
+import type { OptionsConfig as AntfuOptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
+import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
-type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
-  uni?: FlatConfigItem['rules']
+interface OptionsOverrides {
+  overrides?: TypedFlatConfigItem['rules']
 }
 
+interface OptionsConfigOverrides extends NonNullable<AntfuOptionsConfig['overrides']> {
+  uni?: TypedFlatConfigItem['rules']
+}
 export interface OptionsConfig extends AntfuOptionsConfig {
-  uni?: boolean
+  uni?: boolean | OptionsOverrides
   uniJson?: boolean
+  /**
+   * Provide overrides for rules for each integration.
+   *
+   * @deprecated use `overrides` option in each integration key instead
+   */
   overrides?: OptionsConfigOverrides
 }
 
-export function uniHelper(options: OptionsConfig & FlatConfigItem = {}, ...userConfigs: (FlatConfigItem | FlatConfigItem[])[]) {
-  const {
-    uni: enableUni = true,
-    uniJson = true,
-    overrides = {},
-  } = options
-
-  const ignoreManifestJSON = isPackageExists('@uni-helper/vite-plugin-uni-manifest') || uniJson === false
-  const ignorePagesJSON = isPackageExists('@uni-helper/vite-plugin-uni-pages') || uniJson === false
+export function uniHelper(options: OptionsConfig & TypedFlatConfigItem = {}, ...userConfigs: (TypedFlatConfigItem | TypedFlatConfigItem[])[]): FlatConfigComposer<TypedFlatConfigItem, string> {
+  const overrides = {
+    vue: typeof options.vue === 'object' ? Object.assign(options.overrides?.vue ?? {}, options.vue) : undefined,
+    uni: typeof options.uni === 'object' ? Object.assign(options.overrides?.uni ?? {}, options.uni) : undefined,
+  }
+  const ignoreManifestJSON = isPackageExists('@uni-helper/vite-plugin-uni-manifest') || options.uniJson === false
+  const ignorePagesJSON = isPackageExists('@uni-helper/vite-plugin-uni-pages') || options.uniJson === false
   options.ignores = options.ignores || []
 
   if (ignoreManifestJSON)
@@ -35,18 +42,19 @@ export function uniHelper(options: OptionsConfig & FlatConfigItem = {}, ...userC
   else
     userConfigs.unshift(sortPagesJson())
 
-  if (uniJson)
+  if (options.uniJson)
     userConfigs.unshift(sortThemeJson())
 
-  if (enableUni) {
+  if (options.uni) {
     // force enable vue
-    options.vue = true
-    userConfigs.unshift(uni({
-      overrides: overrides.uni,
-    }))
+    if (!options.vue){
+      options.vue = true
+    }
+    userConfigs.unshift(uni(
+      Object.assign(overrides.vue ?? {}, overrides.uni),
+    ))
   }
 
   return antfu(options, ...userConfigs)
 }
-
 export default uniHelper
