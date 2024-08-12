@@ -1,10 +1,10 @@
 import { join, resolve } from 'node:path'
-import type { FlatConfigItem } from '@antfu/eslint-config'
+import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 import { execa } from 'execa'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
 import { afterAll, beforeAll, it } from 'vitest'
-import type { OptionsConfig } from './../src/index'
+import type { OptionsConfig } from './../src/types'
 
 beforeAll(async () => {
   await fs.rm('_fixtures', { recursive: true, force: true })
@@ -19,7 +19,7 @@ runWithConfig('json', {
 
 runWithConfig('uni', {})
 
-function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]) {
+function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlatConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
     const from = resolve('fixtures/input')
     const output = resolve('fixtures/output', name)

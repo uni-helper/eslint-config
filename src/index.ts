@@ -1,6 +1,8 @@
-import type { OptionsConfig as AntfuOptionsConfig, FlatConfigItem } from '@antfu/eslint-config'
+import type { FlatConfigComposer } from 'eslint-flat-config-utils'
+import type { Linter } from 'eslint'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
+import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from './types'
 import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
 type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
@@ -13,7 +15,10 @@ export interface OptionsConfig extends AntfuOptionsConfig {
   overrides?: OptionsConfigOverrides
 }
 
-export function uniHelper(options: OptionsConfig & FlatConfigItem = {}, ...userConfigs: (FlatConfigItem | FlatConfigItem[])[]) {
+export function uniHelper(
+  options: OptionsConfig & TypedFlatConfigItem = {},
+  ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
+) {
   const {
     uni: enableUni = true,
     uniJson = true,
