@@ -1,26 +1,40 @@
 # @uni-helper/eslint-config
 
-适用于 uni-app 的 [Anthony's ESLint](https://github.com/antfu/eslint-config) 配置预设
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
 
-## 安装
+[![License](https://img.shields.io/github/license/uni-helper/eslint-config?style=for-the-badge)](https://github.com/uni-helper/eslint-config/blob/main/LICENSE)
+
+[![npm](https://img.shields.io/npm/v/%40uni-helper%2Feslint-config?style=for-the-badge)](https://www.npmjs.com/package/@uni-helper/eslint-config)
+
+[![npm downloads](https://img.shields.io/npm/dm/%40uni-helper%2Feslint-config?style=for-the-badge)](https://www.npmjs.com/package/@uni-helper/eslint-config)
+
+</div>
+
+基于 [Anthony's ESLint Config](https://github.com/antfu/eslint-config)、适用于 uni-app 项目的 ESLint Config。
+
+- 支持 uni-app 项目
+- 支持对 manifest.json 排序
+- 支持对 pages.json 排序
+- 支持对 theme.json 排序
+
+## 用法
+
+### 手动安装
 
 ```bash
-pnpm i -D eslint @uni-helper/eslint-config
+pnpm i -D eslint @antfu/eslint-config @uni-helper/eslint-config
 ```
 
-## 使用
+不要忘了在项目根目录创建 `eslint.config.mjs`：
 
-### 配置文件
-
-With CJS:
 ```js
-// eslint.config.js
-const uni = require('@uni-helper/eslint-config')
+// eslint.config.mjs
+import uniHelper from '@uni-helper/eslint-config'
 
-module.exports = uni()
+export default uniHelper()
 ```
 
-### 在 package.json 中添加 script
+### 修改 package.json scripts
 
 ```json
 {
@@ -31,144 +45,7 @@ module.exports = uni()
 }
 ```
 
-> [!WARNING]
-> uni-app 暂不支持使用 `"type": "module"`
+更多配置及选项请查看 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的文档，如：
 
-<details>
-<summary>With ESM:</summary>
-
-**在 `package.json` 中设置 `"type": "module"` ：**
-
-```json
-{
-  "type": "module"
-}
-```
-
-设置以下 `eslint.config.js`
-
-```js
-import uni from '@uni-helper/eslint-config'
-
-export default uni()
-```
-</details>
-
-## VS Code 自动修复
-
-安装 [VS Code ESLint 扩展](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-将以下设置添加到您的 `.vscode/settings.json` 中：
-
-```jsonc
-{
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
-
-  // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
-
-  // Auto fix
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
-
-  // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
-  ],
-
-  // Enable eslint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml"
-  ]
-}
-```
-
-## 定制化
-
-通常你只需要导入 `uni-helper` 预设：
-
-```js
-// eslint.config.js
-const uni = require('@uni-helper/eslint-config')
-
-module.exports = uni()
-```
-
-如果你想调整 `uni-helper` 预设可以这样做：
-
-```js
-// eslint.config.js
-const uni = require('@uni-helper/eslint-config')
-
-module.exports = uni({
-  // 启用 stylistic 格式化规则
-  // stylistic: true,
-
-  // 自定义 stylistic 规则
-  stylistic: {
-    indent: 2, // 4, or 'tab'
-    quotes: 'single', // or 'double'
-  },
-
-  // TypeScript 和 Vue 是自动检测的，你也可以显式启用它们:
-  typescript: true,
-  vue: true,
-
-  // 禁用 json 和 yaml 支持
-  jsonc: false,
-  yaml: false,
-
-  // 在 Flat 配置中不再支持 `.eslintignore`，请使用 `ignores` 代替
-  ignores: [
-    './fixtures',
-    // ...globs
-  ]
-})
-```
-
-你还可以自定义任意规则以覆盖默认规则:
-
-```js
-// eslint.config.js
-const uni = require('@uni-helper/eslint-config')
-
-module.exports = uni(
-  {
-    // 为 uniHelper 配置规则
-  },
-
-  // 从第二个参数开始，为 ESLint Flat 配置，它可以存在多个
-  {
-    files: ['**/*.ts'],
-    rules: {},
-  },
-  {
-    rules: {},
-  },
-)
-```
-
-## 高级
-
-要了解更多配置及选项，查看 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的文档，
+- [IDE 支持](https://github.com/antfu/eslint-config#ide-support-auto-fix-on-save)
+- [定制化](https://github.com/antfu/eslint-config#customization)
