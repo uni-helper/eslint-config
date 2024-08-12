@@ -1,7 +1,7 @@
 import { GLOB_VUE } from '@antfu/eslint-config'
-import type { FlatConfigItem, OptionsOverrides } from '@antfu/eslint-config'
+import type { OptionsOverrides, TypedFlatConfigItem } from '../types'
 
-export function uni(options: OptionsOverrides = {}): FlatConfigItem[] {
+export function uni(options: OptionsOverrides = {}): TypedFlatConfigItem[] {
   const {
     overrides = {},
   } = options
@@ -9,8 +9,18 @@ export function uni(options: OptionsOverrides = {}): FlatConfigItem[] {
   return [
     {
       files: [GLOB_VUE],
-      name: 'uni:vue:rules',
+      name: 'uni-helper/vue/rules',
       rules: {
+        // Origin
+        // 'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        // 'vue/component-options-name-casing': ['error', 'PascalCase'],
+        // 'vue/custom-event-name-casing': ['error', 'camelCase'],
+
+        // For uni-app
+        'vue/component-name-in-template-casing': 'off',
+        'vue/component-options-name-casing': 'off',
+        'vue/custom-event-name-casing': 'off',
+
         ...overrides,
       },
     },

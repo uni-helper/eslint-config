@@ -5,15 +5,7 @@ import { isPackageExists } from 'local-pkg'
 import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from './types'
 import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
-type OptionsConfigOverrides = AntfuOptionsConfig['overrides'] & {
-  uni?: FlatConfigItem['rules']
-}
-
-export interface OptionsConfig extends AntfuOptionsConfig {
-  uni?: boolean
-  uniJson?: boolean
-  overrides?: OptionsConfigOverrides
-}
+export * from './types'
 
 export function uniHelper(
   options: OptionsConfig & TypedFlatConfigItem = {},
@@ -22,7 +14,6 @@ export function uniHelper(
   const {
     uni: enableUni = true,
     uniJson = true,
-    overrides = {},
   } = options
 
   const ignoreManifestJSON = isPackageExists('@uni-helper/vite-plugin-uni-manifest') || uniJson === false
@@ -31,7 +22,6 @@ export function uniHelper(
 
   if (ignoreManifestJSON)
     options.ignores.push('**/manifest.json')
-
   else
     userConfigs.unshift(sortManifestJson())
 
@@ -44,11 +34,9 @@ export function uniHelper(
     userConfigs.unshift(sortThemeJson())
 
   if (enableUni) {
-    // force enable vue
+    // Force enable vue
     options.vue = true
-    userConfigs.unshift(uni({
-      overrides: overrides.uni,
-    }))
+    userConfigs.unshift(uni())
   }
 
   return antfu(options, ...userConfigs)
