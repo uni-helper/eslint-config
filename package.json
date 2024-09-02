@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.9.0",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
@@ -57,17 +57,17 @@
     "eslint": "^9.5.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.25.1",
-    "eslint-flat-config-utils": "^0.3.0",
+    "@antfu/eslint-config": "^3.0.0",
+    "eslint-flat-config-utils": "^0.3.1",
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.15",
-    "bumpp": "^9.5.1",
-    "eslint": "^9.9.0",
+    "@types/node": "^20.16.3",
+    "bumpp": "^9.5.2",
+    "eslint": "^9.9.1",
     "esno": "^4.7.0",
-    "execa": "^9.3.0",
+    "execa": "^9.3.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "typescript": "^5.5.4",
