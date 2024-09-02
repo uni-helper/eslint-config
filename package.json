@@ -53,8 +53,8 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^2.25.0",
-    "eslint": ">=8.40.0"
+    "@antfu/eslint-config": "^3.0.0",
+    "eslint": "^9.5.0"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.25.1",
