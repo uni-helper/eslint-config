@@ -17,6 +17,11 @@
 - 支持对 pages.json 排序
 - 支持对 theme.json 排序
 
+|eslint|@antfu/eslint-config|@uni-helper/eslint-config|
+|---|---|---|
+|>=8.40.0|^2.25.0|^0.1.0|
+|^9.5.0|^3.0.0|^0.2.0|
+
 ## 用法
 
 ### 手动安装
@@ -25,7 +30,7 @@
 pnpm i -D eslint @antfu/eslint-config @uni-helper/eslint-config
 ```
 
-不要忘了在项目根目录创建 `eslint.config.mjs`：
+在项目根目录创建 `eslint.config.mjs`：
 
 ```js
 // eslint.config.mjs
