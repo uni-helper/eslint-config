@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.2.0",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.1",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^3.0.0",
-    "eslint-flat-config-utils": "^0.3.1",
+    "eslint-flat-config-utils": "^0.4.0",
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
