@@ -1,6 +1,6 @@
 import type { OptionsConfig as AntfuOptionsConfig, OptionsOverrides } from '@antfu/eslint-config'
 
-export type { TypedFlatConfigItem, OptionsOverrides } from '@antfu/eslint-config'
+export type { OptionsOverrides, TypedFlatConfigItem } from '@antfu/eslint-config'
 
 export type Awaitable<T> = T | Promise<T>
 

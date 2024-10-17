@@ -1,8 +1,8 @@
-import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 import type { Linter } from 'eslint'
+import type { FlatConfigComposer } from 'eslint-flat-config-utils'
+import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from './types'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
-import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from './types'
 import { sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
 
 export * from './types'

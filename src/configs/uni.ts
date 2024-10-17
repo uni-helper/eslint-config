@@ -1,5 +1,5 @@
-import { GLOB_VUE } from '@antfu/eslint-config'
 import type { OptionsOverrides, TypedFlatConfigItem } from '../types'
+import { GLOB_VUE } from '@antfu/eslint-config'
 
 export function uni(options: OptionsOverrides = {}): TypedFlatConfigItem[] {
   const {
