@@ -35,7 +35,7 @@ export function uniHelper(
 
   if (enableUni) {
     // Force enable vue
-    options.vue = true
+    options.vue = options.vue || true
     userConfigs.unshift(uni())
   }
 
