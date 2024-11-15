@@ -1,7 +1,7 @@
 {
   "name": "@uni-helper/eslint-config",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "packageManager": "pnpm@9.13.2",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
