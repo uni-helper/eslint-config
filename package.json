@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.2.2",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.15.4",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
@@ -53,25 +53,25 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^3.4.1",
-    "eslint": "^9.5.0"
+    "@antfu/eslint-config": "^3.13.0",
+    "eslint": "^9.10.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.9.1",
-    "eslint-flat-config-utils": "^0.4.0",
-    "local-pkg": "^0.5.0"
+    "@antfu/eslint-config": "^3.14.0",
+    "eslint-flat-config-utils": "^1.0.0",
+    "local-pkg": "^1.0.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.9.0",
-    "bumpp": "^9.8.1",
-    "eslint": "^9.14.0",
+    "@types/node": "^22.10.6",
+    "bumpp": "^9.10.0",
+    "eslint": "^9.18.0",
     "esno": "^4.8.0",
-    "execa": "^9.5.1",
-    "fast-glob": "^3.3.2",
+    "execa": "^9.5.2",
+    "fast-glob": "^3.3.3",
     "fs-extra": "^11.2.0",
-    "typescript": "^5.6.3",
-    "unbuild": "^2.0.0",
-    "vitest": "^2.1.5"
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.1",
+    "vitest": "^2.1.8"
   }
 }
