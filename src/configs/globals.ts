@@ -1,5 +1,4 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
-// @ts-expect-error The types are conflicting with the latest eslint version.
 import { FlatCompat } from '@eslint/eslintrc'
 
 const compat = new FlatCompat()
