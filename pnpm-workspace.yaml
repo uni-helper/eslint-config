@@ -1,2 +1,22 @@
+catalogMode: prefer
+shellEmulator: true
+trustPolicy: no-downgrade
+
+catalog:
+  '@antfu/eslint-config': ^6.5.1
+  '@eslint/eslintrc': ^3.3.3
+  '@types/fs-extra': ^11.0.4
+  '@types/node': ^24.10.1
+  bumpp: ^10.3.2
+  eslint: ^9.39.1
+  eslint-flat-config-utils: ^2.1.4
+  execa: ^9.6.1
+  fast-glob: ^3.3.3
+  fs-extra: ^11.3.2
+  local-pkg: ^1.1.2
+  tsdown: ^0.17.1
+  tsx: ^4.21.0
+  typescript: ^5.9.3
+  vitest: ^4.0.15
 configDependencies:
   '@pnpm/plugin-trusted-deps': 0.1.0+sha512-OK05vSZpezQHcS7Y0T5A25QXDbBRtRq52s76eOkMgp9v8ifNrIR8pjIGqrUFUn0PwKLt2i+U1LPYB+RWi1xjaQ==

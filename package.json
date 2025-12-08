@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.5.0",
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.24.0",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
@@ -19,19 +19,19 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       }
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "typesVersions": {
     "*": {
       "*": [
         "./dist/*",
-        "./dist/index.d.ts"
+        "./dist/index.d.mts"
       ]
     }
   },
@@ -43,33 +43,33 @@
     "dev": "tsdown --watch",
     "prepublishOnly": "pnpm build",
     "release": "bumpp",
-    "start": "esno src/index.ts",
+    "start": "tsx src/index.ts",
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^5.0.0",
+    "@antfu/eslint-config": "^5.0.0 || ^6.0.0",
     "eslint": "^9.10.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^5.2.1",
-    "@eslint/eslintrc": "^3.3.1",
-    "eslint-flat-config-utils": "^2.1.1",
-    "local-pkg": "^1.1.2"
+    "@antfu/eslint-config": "catalog:",
+    "@eslint/eslintrc": "catalog:",
+    "eslint-flat-config-utils": "catalog:",
+    "local-pkg": "catalog:"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.18.0",
-    "bumpp": "^10.2.3",
-    "eslint": "^9.34.0",
-    "esno": "^4.8.0",
-    "execa": "^9.6.0",
-    "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.1",
-    "tsdown": "^0.14.2",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "@types/fs-extra": "catalog:",
+    "@types/node": "catalog:",
+    "bumpp": "catalog:",
+    "eslint": "catalog:",
+    "execa": "catalog:",
+    "fast-glob": "catalog:",
+    "fs-extra": "catalog:",
+    "tsdown": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }
