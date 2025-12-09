@@ -20,6 +20,12 @@ export function uni(options: OptionsOverrides = {}): TypedFlatConfigItem[] {
         'vue/component-name-in-template-casing': 'off',
         'vue/component-options-name-casing': 'off',
         'vue/custom-event-name-casing': 'off',
+        'vue/singleline-html-element-content-newline': [
+          'error',
+          {
+            externalIgnores: ['text'],
+          },
+        ],
 
         ...overrides,
       },
