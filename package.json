@@ -50,7 +50,7 @@
     "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^5.0.0 || ^6.0.0",
+    "@antfu/eslint-config": "^7.0.0",
     "eslint": "^9.10.0"
   },
   "dependencies": {
