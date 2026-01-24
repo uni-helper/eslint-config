@@ -9,7 +9,7 @@ catalog:
   '@types/node': ^24.10.1
   bumpp: ^10.3.2
   eslint: ^9.39.1
-  eslint-flat-config-utils: ^2.1.4
+  eslint-flat-config-utils: ^3.0.0
   execa: ^9.6.1
   fast-glob: ^3.3.3
   fs-extra: ^11.3.2
