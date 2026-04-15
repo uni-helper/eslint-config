@@ -7,7 +7,7 @@ catalog:
   '@eslint/eslintrc': ^3.3.3
   '@types/fs-extra': ^11.0.4
   '@types/node': ^24.10.1
-  bumpp: ^10.3.2
+  bumpp: ^11.0.0
   eslint: ^10.0.0
   eslint-flat-config-utils: ^3.0.1
   execa: ^9.6.1
