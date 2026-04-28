@@ -3,6 +3,7 @@
 <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge"></a>
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/uni-helper/eslint-config)
 <br/>
 
 基于 [Anthony's ESLint Config](https://github.com/antfu/eslint-config)、适用于 uni-app 项目的 ESLint Config。
