@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.7.1",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.33.2",
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
@@ -50,7 +50,7 @@
     "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "@antfu/eslint-config": "^7.0.0 || ^8.0.0",
     "eslint": "^10.0.0"
   },
   "dependencies": {
