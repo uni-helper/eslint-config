@@ -16,7 +16,7 @@ catalog:
   local-pkg: ^1.1.2
   tsdown: ^0.21.10
   tsx: ^4.21.0
-  typescript: ^5.9.3
+  typescript: ^6.0.0
   vitest: ^4.1.5
 configDependencies:
   '@pnpm/plugin-trusted-deps': 0.2.2+sha512-+ZupiXKJhW2fbSilfyRp+wrAY54MKg+c0JWSFGdeb/y9bUoYN5u4XLOZ0Txk7O2bBa6NMhWrX5mwmsHP3/nm9Q==
