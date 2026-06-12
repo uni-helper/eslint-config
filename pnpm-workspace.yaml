@@ -3,7 +3,7 @@ shellEmulator: true
 trustPolicy: no-downgrade
 
 catalog:
-  '@antfu/eslint-config': ^8.2.0
+  '@antfu/eslint-config': ^9.0.0
   '@eslint/eslintrc': ^3.3.5
   '@types/fs-extra': ^11.0.4
   '@types/node': ^24.12.2
