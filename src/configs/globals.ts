@@ -19,6 +19,7 @@ export function globals(): TypedFlatConfigItem[] {
       uniCloud: 'readonly', // https://uniapp.dcloud.net.cn
       weex: 'readonly', // https://weex.apache.org/
       wx: 'readonly', // https://developers.weixin.qq.com/miniprogram/dev/framework/
+      xhs: 'readonly', // https://miniapp.xiaohongshu.com/
     },
   })
 }
