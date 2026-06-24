@@ -15,8 +15,8 @@ export function globals(): TypedFlatConfigItem[] {
       qq: 'readonly', // https://q.qq.com/
       swan: 'readonly', // https://smartprogram.baidu.com/docs
       tt: 'readonly', // https://developer.open-douyin.com/ https://open.feishu.cn/
-      uni: 'readonly', // https://uniapp.dcloud.io/
-      uniCloud: 'readonly', // https://uniapp.dcloud.io
+      uni: 'readonly', // https://uniapp.dcloud.net.cn/
+      uniCloud: 'readonly', // https://uniapp.dcloud.net.cn
       weex: 'readonly', // https://weex.apache.org/
       wx: 'readonly', // https://developers.weixin.qq.com/miniprogram/dev/framework/
     },
