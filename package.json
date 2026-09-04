@@ -1,7 +1,7 @@
 {
   "name": "@uni-helper/eslint-config",
   "type": "module",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "packageManager": "pnpm@12.3.2",
   "devEngines": {
     "runtime": {
