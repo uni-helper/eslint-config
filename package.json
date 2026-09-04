@@ -6,7 +6,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": ">=26 <27"
+      "version": "26"
     },
     "packageManager": {
       "name": "pnpm",
@@ -53,11 +53,10 @@
     "dev": "tsdown --watch",
     "prepublishOnly": "pnpm build",
     "release": "bumpp",
-    "start": "tsx src/index.ts",
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "check-types": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^7.0.0 || ^8.0.0 || ^9.0.0",
@@ -70,15 +69,12 @@
     "local-pkg": "catalog:"
   },
   "devDependencies": {
-    "@types/fs-extra": "catalog:",
     "@types/node": "catalog:",
     "bumpp": "catalog:",
     "eslint": "catalog:",
-    "execa": "catalog:",
-    "fast-glob": "catalog:",
-    "fs-extra": "catalog:",
+    "tinyexec": "catalog:",
+    "tinyglobby": "catalog:",
     "tsdown": "catalog:",
-    "tsx": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }
