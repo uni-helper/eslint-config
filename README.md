@@ -1,15 +1,20 @@
 <a href="https://uni-helper.js.org/eslint-config"><img src="./banner.svg" alt="banner" width="100%"/></a>
 
-<p align="center">
+<p style="text-align: center">
   <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
   <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
-  <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="NPM version"></a>
 </p>
-<p align="center">
-  <a href="https://deepwiki.com/uni-helper/eslint-config"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+<p style="text-align: center">
+  <a href="https://github.com/kejunmao"><img src="https://img.shields.io/badge/Author-KeJun-blue?style=for-the-badge" alt="Author"></a>
+  <a href="https://github.com/ModyQyW"><img src="https://img.shields.io/badge/Maintainer-ModyQyW-blue?style=for-the-badge" alt="Author"></a>
 </p>
 
 基于 [antfu/eslint-config](https://github.com/antfu/eslint-config)，为 [uni-app](https://uniapp.dcloud.net.cn/) 项目提供开箱即用的 ESLint 配置。
+
+不想看文档？直接问 AI 🤖 <a href="https://deepwiki.com/uni-helper/eslint-config"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+
+> **请考虑持续[赞助](https://github.com/ModyQyW/sponsors)以维持该项目的持续健康发展，非常感谢！🙏**
 
 - **uni-app 规则适配** — 关闭与 uni-app 冲突的 Vue 规则（如组件名大小写、自定义事件命名），自动注册 `uni`、`wx`、`my`、`tt` 等平台全局变量
 - **JSON 排序** — 按 uni-app 官方规范对 `manifest.json`、`pages.json`、`theme.json` 的键进行排序，保持配置文件一致性
