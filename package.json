@@ -2,7 +2,17 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.7.4",
-  "packageManager": "pnpm@10.34.4",
+  "packageManager": "pnpm@12.3.2",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=26 <27"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.3.2"
+    }
+  },
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
