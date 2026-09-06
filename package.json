@@ -2,15 +2,17 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.7.5",
-  "packageManager": "pnpm@12.3.2",
+  "packageManager": "pnpm@12.3.4",
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "26"
+      "version": "26",
+      "onFail": "warn"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.3.2"
+      "version": "12.3.4",
+      "onFail": "warn"
     }
   },
   "description": "Uni Helper's ESLint config",
