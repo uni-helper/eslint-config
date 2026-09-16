@@ -1,5 +1,7 @@
 <a href="https://uni-helper.js.org/eslint-config"><img src="./banner.svg" alt="banner" width="100%"/></a>
 
+# @uni-helper/eslint-config
+
 <p style="text-align: center">
   <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
   <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
@@ -7,7 +9,7 @@
 </p>
 <p style="text-align: center">
   <a href="https://github.com/kejunmao"><img src="https://img.shields.io/badge/Author-KeJun-blue?style=for-the-badge" alt="Author"></a>
-  <a href="https://github.com/ModyQyW"><img src="https://img.shields.io/badge/Maintainer-ModyQyW-blue?style=for-the-badge" alt="Author"></a>
+  <a href="https://github.com/ModyQyW"><img src="https://img.shields.io/badge/Maintainer-ModyQyW-blue?style=for-the-badge" alt="Maintainer"></a>
 </p>
 
 基于 [antfu/eslint-config](https://github.com/antfu/eslint-config)，为 [uni-app](https://uniapp.dcloud.net.cn/) 项目提供开箱即用的 ESLint 配置。
