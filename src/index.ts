@@ -7,6 +7,7 @@ import { globals, sortManifestJson, sortPagesJson, sortThemeJson, uni } from './
 
 export * from './types'
 
+// eslint-disable-next-line ts/explicit-function-return-type
 export function uniHelper(
   options: OptionsConfig & TypedFlatConfigItem = {},
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
