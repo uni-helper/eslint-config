@@ -1,13 +1,18 @@
-<a href="https://uni-helper.js.org/eslint-config"><img src="./banner.svg" alt="banner" width="100%"/></a>
+<a href="https://uni-helper.js.org/eslint-config"><img src="https://cdn.jsdelivr.net/gh/uni-helper/eslint-config@main/banner.svg" alt="banner" width="100%"/></a>
 
 # @uni-helper/eslint-config
 
-<p style="text-align: center">
-  <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
-  <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
-  <a href="https://www.npmjs.com/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="NPM version"></a>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/uni-helper/eslint-config@main/logo.svg" alt="logo"/>
 </p>
-<p style="text-align: center">
+
+<p align="center">
+  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
+  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
+  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="NPM version"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="License"></a>
+</p>
+<p align="center">
   <a href="https://github.com/kejunmao"><img src="https://img.shields.io/badge/Author-KeJun-blue?style=for-the-badge" alt="Author"></a>
   <a href="https://github.com/ModyQyW"><img src="https://img.shields.io/badge/Maintainer-ModyQyW-blue?style=for-the-badge" alt="Maintainer"></a>
 </p>
@@ -18,7 +23,8 @@
 
 > **请考虑持续[赞助](https://github.com/ModyQyW/sponsors)以维持该项目的持续健康发展，非常感谢！🙏**
 
-- **uni-app 规则适配** — 关闭与 uni-app 冲突的 Vue 规则（如组件名大小写、自定义事件命名），自动注册 `uni`、`wx`、`my`、`tt` 等平台全局变量
+- **uni-app 规则适配** — 关闭与 uni-app 冲突的 Vue 规则（如组件名大小写、自定义事件命名）
+- **平台全局变量** — 自动注册 `uni`、`wx`、`my`、`tt` 等平台全局变量
 - **JSON 排序** — 按 uni-app 官方规范对 `manifest.json`、`pages.json`、`theme.json` 的键进行排序，保持配置文件一致性
 - **智能检测** — 安装了 `@uni-helper/vite-plugin-uni-manifest` 或 `@uni-helper/vite-plugin-uni-pages` 时，自动跳过对应 JSON 文件的排序
 
@@ -54,12 +60,14 @@ export default uniHelper()
 
 ```js
 export default uniHelper({
-  // 启用 uni-app 规则适配和全局变量，默认 true
+  // 启用 uni-app 规则适配，默认 true。开启时会强制启用 Vue 支持
   uni: true,
   // 启用 JSON 排序（manifest.json / pages.json / theme.json），默认 true
   uniJson: true,
 })
 ```
+
+平台全局变量的注册不受 `uni` 选项影响，始终启用。
 
 所有 [@antfu/eslint-config 选项](https://github.com/antfu/eslint-config#customization) 均可直接传递。
 

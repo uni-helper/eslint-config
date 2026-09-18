@@ -18,6 +18,10 @@
   "description": "Uni Helper's ESLint config",
   "author": "KeJun",
   "license": "MIT",
+  "funding": [
+    "https://afdian.com/a/kejun",
+    "https://github.com/ModyQyW/sponsors"
+  ],
   "homepage": "https://github.com/uni-helper/eslint-config#readme",
   "repository": {
     "type": "git",
