@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
+  <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
   <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
   <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="NPM version"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="License"></a>
@@ -78,7 +78,7 @@ export default uniHelper({
 | eslint | @antfu/eslint-config | @uni-helper/eslint-config | Node.js | 备注 |
 |--------|----------------------|---------------------------|---------|------|
 | ^10.0.0 | ^7.0.0 \|\| ^8.0.0 \|\| ^9.0.0 | ^0.7.4 | ^20.19.0 \|\| ^22.13.0 \|\| >=24 | 仅 ESM |
-| ^10.0.0 | ^5.0.0 \|\| ^6.0.0 \|\| ^7.0.0 | ^0.7.0 | ^20.19.0 \|\| ^22.13.0 \|\| >=24 | 仅 ESM |
+| ^10.0.0 | ^5.0.0 \|\| ^6.0.0 \|\| ^7.0.0 | 0.7.1 | ^20.19.0 \|\| ^22.13.0 \|\| >=24 | 仅 ESM |
 | ^9.10.0 | ^5.0.0 \|\| ^6.0.0 | ^0.6.0 | ^18.18.0 \|\| ^20.9.0 \|\| >=21.1.0 | 仅 ESM |
 | ^9.10.0 | ^5.0.0 | ^0.5.0 | ^18.18.0 \|\| ^20.9.0 \|\| >=21.1.0 | 仅 ESM |
 | ^9.10.0 | ^4.0.1 | ^0.4.0 | ^18.18.0 \|\| ^20.9.0 \|\| >=21.1.0 | 仅 ESM |
@@ -91,6 +91,10 @@ export default uniHelper({
 - [antfu/eslint-config](https://github.com/antfu/eslint-config) — 本配置的上游基础
 - [uni-helper](https://uni-helper.js.org/) — uni-app 工具集合
 - [IDE 支持（保存时自动修复）](https://github.com/antfu/eslint-config#ide-support-auto-fix-on-save)
+
+## 参与贡献
+
+欢迎通过 Issue 或 Pull Request 参与改进本项目。开始前请阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)，了解项目结构、本地开发流程、测试方式与提交规范。
 
 ## License
 
