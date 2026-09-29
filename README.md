@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="GitHub Stars"></a>
-  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="npm downloads"></a>
-  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="NPM version"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/uni-helper/eslint-config?colorA=005947&colorB=eee&style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/uni-helper/eslint-config/blob/main/LICENSE"><img src="https://img.shields.io/github/license/uni-helper/eslint-config?style=for-the-badge&labelColor=005947&color=eee" alt="License"></a>
+  <a href="https://github.com/uni-helper/eslint-config/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/eslint-config?style=for-the-badge&labelColor=005947&color=eee" alt="GitHub Stars"></a>
+  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/v/@uni-helper/eslint-config?style=for-the-badge&labelColor=005947&color=eee" alt="NPM version"></a>
+  <a href="https://npmx.dev/package/@uni-helper/eslint-config"><img src="https://img.shields.io/npm/dm/@uni-helper/eslint-config?style=for-the-badge&labelColor=005947&color=eee" alt="npm downloads"></a>
 </p>
 <p align="center">
   <a href="https://github.com/kejunmao"><img src="https://img.shields.io/badge/Author-KeJun-blue?style=for-the-badge" alt="Author"></a>
@@ -98,4 +98,4 @@ export default uniHelper({
 
 ## License
 
-[MIT](./LICENSE) © [KeJun](https://github.com/uni-helper)
+[MIT](https://github.com/uni-helper/eslint-config/blob/main/LICENSE) © [KeJun](https://github.com/kejunmao)

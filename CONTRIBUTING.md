@@ -94,4 +94,8 @@ pnpm run lint:fix
 
 维护者通过 `pnpm release`（[bumpp](https://github.com/antfu/bumpp)）提升版本并推送 tag；tag 推送会触发 Release workflow，创建 GitHub Release 并发布到 npm。
 
+## 行为准则
+
+请阅读并遵守项目所在组织的 [Code of Conduct](https://github.com/uni-helper/.github/blob/main/CODE_OF_CONDUCT.md)。
+
 感谢你的贡献！如有疑问，欢迎在 [GitHub Issues](https://github.com/uni-helper/eslint-config/issues) 中提问。
