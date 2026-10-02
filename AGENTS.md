@@ -5,10 +5,10 @@ Wraps `@antfu/eslint-config` with uni-app adaptations: relaxed Vue naming rules,
 ## Project
 
 - **Language/runtime:** TypeScript, `"type": "module"`, ESM-only output. Dev pins Node 26 via `.node-version` and `devEngines.runtime`; no published `engines` field (CONTRIBUTING names 26 as the dev minimum).
-- **Toolchain:** tsdown (build), vitest (test), @antfu/eslint-config (lint — the repo lints itself with `type: 'lib'`), pnpm 12.3.4 (pinned via `packageManager` and `devEngines.packageManager`).
+- **Toolchain:** tsdown (build), vitest (test), @antfu/eslint-config (lint — the repo lints itself with `type: 'lib'`), pnpm 12.8.1 (pinned via `packageManager` and `devEngines.packageManager`).
 - **Package:** `@uni-helper/eslint-config` — single entry `.` exporting default `uniHelper()` plus the named export; ships `dist/index.mjs` + bundled `index.d.mts`. ESM only.
 - **Peer deps:** `eslint ^10.0.0`, `@antfu/eslint-config ^7.0.0 || ^8.0.0 || ^9.0.0`. The README's 兼容性 table documents older pairings; every row was verified against npm-published peerDependencies.
-- **Workspace:** `pnpm-workspace.yaml` has no `packages:` glob — it only centralizes versions via `catalog:` and sets trust/build policy. The repo root is the published package.
+- **Workspace:** `pnpm-workspace.yaml` has no `packages:` glob — it centralizes versions via `catalog:` and sets trust/build policy, `shellEmulator`, and `catalogMode: prefer`. The repo root is the published package.
 
 ## Commands
 
