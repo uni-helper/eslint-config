@@ -2,7 +2,7 @@
   "name": "@uni-helper/eslint-config",
   "type": "module",
   "version": "0.7.5",
-  "packageManager": "pnpm@12.8.1",
+  "packageManager": "pnpm@12.15.0",
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -11,7 +11,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.8.1",
+      "version": "12.15.0",
       "onFail": "warn"
     }
   },
@@ -65,7 +65,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^7.0.0 || ^8.0.0 || ^9.0.0",
+    "@antfu/eslint-config": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0",
     "eslint": "^10.0.0"
   },
   "dependencies": {
