@@ -19,6 +19,15 @@ runWithConfig('json', {
 
 runWithConfig('uni', {})
 
+runWithConfig('overrides', {
+  uni: {
+    overrides: { 'vue/singleline-html-element-content-newline': 'off' },
+  },
+  uniJson: {
+    overrides: { 'jsonc/sort-keys': 'off' },
+  },
+})
+
 function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlatConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
     const from = resolve('fixtures/input')
@@ -44,7 +53,11 @@ export default uni(
     // Spawn the repo-local eslint via the current node instead of `npx`:
     // npm 11+ hard-fails on the repo's devEngines.packageManager (pnpm)
     // because npx itself runs under npm
-    await x(process.execPath, [resolve('node_modules/eslint/bin/eslint.js'), '.', '--fix'], {
+    await x(process.execPath, [
+      resolve('node_modules/eslint/bin/eslint.js'),
+      '.',
+      '--fix',
+    ], {
       nodeOptions: { cwd: target },
       throwOnError: true,
     })

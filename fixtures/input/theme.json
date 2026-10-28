@@ -1,7 +1,7 @@
 {
   "light": {
-    "bgColor": "#fcfcfc",
     "bgColorBottom": "#fcfcfc",
+    "bgColor": "#fcfcfc",
     "bgColorTop": "#ff6b00",
     "bgTxtStyle": "dark",
     "navBgColor": "#ff6b00",
