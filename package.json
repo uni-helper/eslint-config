@@ -16,7 +16,10 @@
     }
   },
   "description": "Uni Helper's ESLint config",
-  "author": "KeJun",
+  "author": {
+    "name": "kejunmao",
+    "email": "kejun1997@gmail.com"
+  },
   "license": "MIT",
   "funding": [
     "https://afdian.com/a/kejun",
