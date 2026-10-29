@@ -24,6 +24,7 @@
 > **请考虑持续[赞助](https://github.com/ModyQyW/sponsors)以维持该项目的持续健康发展，非常感谢！🙏**
 
 - **uni-app 规则适配**：关闭与 uni-app 冲突的 Vue 规则（如组件名大小写、自定义事件命名）
+- **nvue / uvue / uts 支持**：`.nvue`、`.uvue` 与 `.vue` 共用同一套 Vue 规则，`<script lang="uts">` 和 `.uts` 文件按 TypeScript 解析，`.uvue` 的页面生命周期与 UTS 平台对象注册为全局变量
 - **平台全局变量**：自动注册 `uni`、`wx`、`my`、`tt` 等平台全局变量
 - **JSON 排序**：按 uni-app 官方规范对 `manifest.json`、`pages.json`、`theme.json` 的键进行排序，保持配置文件一致性
 - **智能检测**：安装了 `@uni-helper/vite-plugin-uni-manifest` 或 `@uni-helper/vite-plugin-uni-pages` 时，自动跳过对应 JSON 文件的排序
@@ -60,7 +61,8 @@ export default uniHelper()
 
 ```js
 export default uniHelper({
-  // 启用 uni-app 规则适配，默认 true。开启时会强制启用 Vue 支持
+  // 启用 uni-app 规则适配，默认 true。开启时会强制启用 Vue 支持，
+  // 并把 Vue 配置的覆盖范围扩展到 .nvue / .uvue
   uni: true,
   // 启用 JSON 排序（manifest.json / pages.json / theme.json），默认 true
   uniJson: true,
@@ -87,6 +89,16 @@ export default uniHelper({
 对象形式同样表示启用，只有显式传 `false` 才会关闭对应功能。
 
 所有 [@antfu/eslint-config 选项](https://github.com/antfu/eslint-config#customization) 均可直接传递。
+
+### nvue / uvue / uts
+
+`uni` 开启时（默认），`.nvue` 和 `.uvue` 用和 `.vue` 相同的解析器与规则，`<script lang="uts">` 交给 TypeScript 解析器处理。独立的 `.uts` 文件同样按 TypeScript 解析，传了 `typescript: false` 时不处理。`<script>` 要写在 `<template>` 前面，沿用 antfu 的默认顺序。
+
+`.uvue` 里可以直接调用页面生命周期，比如 `onLoad`、`onPageShow`、`onBackPress`，也能直接用 `UTSAndroid`、`UTSiOS`、`UTSHarmony`、`UTSJSONObject`，不用额外声明，完整名单见 [uni-app x 页面文档](https://doc.dcloud.net.cn/uni-app-x/page.html)。这些全局变量只对 `.uvue` 生效。
+
+`ts/consistent-type-definitions` 和 `ts/prefer-as-const` 对 `.uts` 和 `.uvue` 关闭。这两条规则要求的写法 UTS 编译器不接受：对象字面量只能用 `type` 声明，`as const` 断言不支持。
+
+0.8.0 起 `.nvue`、`.uvue`、`.uts` 才进入 lint 范围，老项目升级后 CI 可能冒出一批新问题，建议单独提一个 PR 修。
 
 ## 兼容性
 

@@ -16,14 +16,15 @@ eslint-config/
 │   ├── index.ts                    # uniHelper() 入口：解析选项、组装配置并调用 antfu()
 │   ├── types.ts                    # OptionsConfig 类型（扩展 antfu 的 uni / uniJson 选项）
 │   └── configs/
-│       ├── uni.ts                  # uni-app 的 Vue 规则适配
+│       ├── uni.ts                  # uni-app 规则适配（nvue / uvue / uts 后缀、uvue 全局变量）
 │       ├── globals.ts              # uni / wx / my / tt 等平台全局变量
 │       ├── sortManifestJson.ts     # manifest.json 键排序规则
 │       ├── sortPagesJson.ts        # pages.json 键排序规则
 │       ├── sortThemeJson.ts        # theme.json 键排序规则
 │       └── index.ts                # 配置统一导出
 ├── test/
-│   └── fixtures.test.ts            # fixture 驱动的测试
+│   ├── fixtures.test.ts            # fixture 驱动的测试
+│   └── uvue-globals.test.ts        # .uvue 全局变量的 ESLint API 测试
 ├── fixtures/
 │   ├── input/                      # 待 lint 的样例项目
 │   └── output/                     # 每个 case 的期望 lint 结果

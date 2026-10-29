@@ -1,0 +1,20 @@
+<script setup lang="uts">
+type Item = { id: number }
+
+const greeting = ref<string>('Hello from uvue')
+const item: Item = { id: 1 }
+
+onLoad(() => {
+  greeting.value = `${greeting.value}!`
+})
+</script>
+
+<template>
+  <view class="content">
+    <text>
+      {{ greeting }}
+    </text>
+    <text class="title">{{ item.id }}</text>
+    <my-comp :msg="greeting" />
+  </view>
+</template>

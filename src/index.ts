@@ -1,9 +1,9 @@
 import type { Linter } from 'eslint'
 import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from './types'
-import { antfu } from '@antfu/eslint-config'
+import { antfu, GLOB_VUE } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
-import { globals, sortManifestJson, sortPagesJson, sortThemeJson, uni } from './configs'
+import { GLOB_UNI_SFC, globals, sortManifestJson, sortPagesJson, sortThemeJson, uni, UNI_SFC_EXTS, UNI_TS_EXTS } from './configs'
 
 export * from './types'
 
@@ -47,6 +47,30 @@ export function uniHelper(
   if (enableUni) {
     // Force enable vue
     options.vue = options.vue || true
+
+    const vueOptions = typeof options.vue === 'object'
+      ? options.vue
+      : {}
+    // antfu's Vue config hardcodes `files: [GLOB_VUE]`; its `componentExts`
+    // never reaches it, so the extension globs have to be injected here
+    options.vue = {
+      ...vueOptions,
+      files: [
+        ...(vueOptions.files ?? [GLOB_VUE]),
+        ...GLOB_UNI_SFC,
+      ],
+    }
+    // `componentExts` feeds the TypeScript config's files globs and
+    // `extraFileExtensions`: it gives `.nvue` / `.uvue` the TypeScript parser and
+    // rules, and is the only thing that makes `.uts` match a config at all.
+    options.componentExts = [
+      ...new Set([
+        ...(options.componentExts ?? []),
+        ...UNI_SFC_EXTS,
+        ...UNI_TS_EXTS,
+      ]),
+    ]
+
     userConfigs.unshift(uni({ overrides: uniOverrides }))
   }
 

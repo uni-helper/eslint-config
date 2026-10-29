@@ -1,0 +1,5 @@
+type Greeting = { name: string }
+
+export const greeting: Greeting = { name: "hi" }
+
+export const label: "idle" = "idle"

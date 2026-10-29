@@ -1,0 +1,19 @@
+<script>
+export default {
+  data() {
+    return {
+      greeting: 'Hello from nvue',
+    }
+  },
+}
+</script>
+
+<template>
+  <view class="content">
+    <text>
+      {{ greeting }}
+    </text>
+    <text class="title">{{ greeting }}</text>
+    <my-comp :msg="greeting" />
+  </view>
+</template>
