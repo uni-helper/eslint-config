@@ -46,7 +46,7 @@ import uni from '@uni-helper/eslint-config'
 
 export default uni(
   ${JSON.stringify(configs)},
-  ...${JSON.stringify(items) ?? []},
+  ...${JSON.stringify(items)},
 )
   `)
 
